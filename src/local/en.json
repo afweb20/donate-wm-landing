@@ -13,5 +13,7 @@
   "howToCreateLinkTitle": "Как создать ссылкку",
   "howToPublishLinkTitle": "Как разместить ссылку",
   "LinkCustomizationTitle": "Кастомизация",
-  "demoChannelTitle": "Демонстрация"
+  "demoChannelTitle": "Демонстрация",
+  "demoButton": "Демо",
+  "demoChanelButton": "Демо-канал"
 }

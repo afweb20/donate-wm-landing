@@ -1,579 +1,227 @@
-.#{$prefix}btn {
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-  display: inline-block; //fallback
+.btn {
+  @include sMainTextBold();
+
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  padding: calc(0.625rem - 1px) calc(1rem - 1px); //вычитание пикселя нужно из-за бордера 
-  cursor: pointer;
-  transition: var(--#{$prefix}trans-dur) all;
-  text-align: center;
-  text-decoration: none;
-  color: var(--#{$prefix}white);
-  border: 1px solid transparent;
-  border-radius: 0.5rem;
-  outline: none;
-  background: transparent;
+  min-height: 40px;
+  padding: 3px 12px;
+  transition: all 0.2s ease;
+  border: none;
 
-  justify-content: center;
+  gap: 12px;
 
-  &:focus,
-  &:focus-visible {
-    box-shadow: 0 0 0 3px var(--#{$prefix}blue-200);
-  }
+  &.btn-xl {
+    @include sMainTextBold();
 
-  &[disabled] {
-    cursor: pointer;
-    pointer-events: none;
-    color: var(--#{$prefix}gray-400);
-  }
+    min-height: 40px;
+    padding: 3px 12px;
 
-  & > img,
-  & > svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: 0 0.25rem;
+    gap: 8px;
 
-    flex-shrink: 0;
+    @media (min-width: 992px) {
+      @include sSubHeader();
 
-    path {
-      transition: var(--#{$prefix}trans-dur) all;
+      min-width: 160px;
+      min-height: 64px;
+      padding: 7px 24px;
+      border-radius: 16px;
+
+      justify-content: center;
+    }
+    span {
+      white-space: nowrap;
+    }
+    .bi:before {
+      font-size: 24px;
     }
   }
+  &.btn-lg {
+    @include sBigTextBold();
 
-  &-text {
-    margin: 0 0.25rem; //нужен для отсупа от иконок, поэтому пэддинги также уменьшены
-  }
+    min-height: 48px;
+    padding: 7px 16px;
 
-  &-round {
-    padding: calc(0.5rem - 1px);
-    border-radius: 100%;
-
-    & > img,
-    & > svg {
-      margin: 0;
+    gap: 8px;
+    span {
+      white-space: nowrap;
+    }
+    .bi:before {
+      font-size: 24px;
     }
   }
+  &.btn-sm {
+    @include sLabelExtra();
 
-  //размеры
+    min-height: 32px;
+    padding: 0 12px;
+    border-radius: 24px;
 
-  &.#{$prefix}btn-icon {
-    padding: calc(0.5rem - 1px) calc(1rem - 1px); // т.к иконки всегда 24px высотой, нужно вычитать разницу в отступе
+    gap: 12px;
   }
-
-  &-small {
-    padding: calc(0.325rem - 1px) calc(0.75rem - 1px);
-
-    &.#{$prefix}btn-icon {
-      padding: calc(0.25rem - 1px) calc(0.75rem - 1px);
-    }
+  &.btn-gray-800 {
+    @include buttonBackground(
+    $gray-800,
+    $gray-900,
+    $gray-900,
+    $gray-800,
+    $white,
+    $gray-400
+    );
   }
-
-  &-large {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    padding: calc(0.625rem - 1px) calc(1.25rem - 1px);
-
-    &.#{$prefix}btn-icon {
-      padding: calc(0.625rem - 1px) calc(1.25rem - 1px);
-    }
+  &.btn-brand {
+    @include buttonBackground(
+    $brand-500,
+    $brand-600,
+    $brand-700,
+    $brand-500,
+    $white,
+    $brand-100
+    );
   }
-
-  &-x-large {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    padding: calc(0.75rem - 1px) calc(1.75rem - 1px);
-
-    &.#{$prefix}btn-icon {
-      padding: calc(0.75rem - 1px) calc(1.75rem - 1px);
-    }
-
-    &.#{$prefix}btn-round {
-      padding: calc(0.75rem - 1px);
-    }
-  }
-
-  &-xx-large {
-    font-size: 1.125rem;
-    line-height: 2rem;
-    padding: calc(0.875rem - 1px) calc(2.5rem - 1px);
-
-    &.#{$prefix}btn-icon {
-      padding: calc(1.125rem - 1px) calc(2.5rem - 1px);
-    }
-  }
-
-  //цветовые схемы
-
-  &-primary {
-    border: 1px solid var(--#{$prefix}blue-500);
-    background: var(--#{$prefix}blue-500);
-
+  &.btn-brand-25 {
+    @include buttonBackground(
+    $brand-25,
+    $brand-50,
+    $brand-100,
+    $brand-25,
+    $brand-500,
+    $brand-100
+    );
     &:hover {
-      border: 1px solid var(--#{$prefix}blue-600);
-      background: var(--#{$prefix}blue-600);
+      color: $brand-600;
     }
-
     &:active {
-      border: 1px solid var(--#{$prefix}blue-700);
-      background: var(--#{$prefix}blue-700);
+      color: $brand-700;
     }
-
-    &[disabled] {
-      border: 1px solid var(--#{$prefix}gray-100);
-      background: var(--#{$prefix}gray-100);
+    &:focus {
+      color: $brand-500;
     }
   }
-
-  &-secondary-colored {
-    color: var(--#{$prefix}blue-500);
-    border: 1px solid var(--#{$prefix}blue-25);
-    background: var(--#{$prefix}blue-25);
-
+  &.btn-red {
+    @include buttonBackground(
+    $red-500,
+    $red-600,
+    $red-700,
+    $red-500,
+    $white,
+    $red-200
+    );
+  }
+  &.btn-red-25 {
+    @include buttonBackground(
+    $red-100,
+    $red-200,
+    $red-300,
+    $red-100,
+    $red-600,
+    $red-200
+    );
     &:hover {
-      border: 1px solid var(--#{$prefix}blue-50);
-      background: var(--#{$prefix}blue-50);
+      color: $red-600;
     }
-
     &:active {
-      color: var(--#{$prefix}white);
-      border: 1px solid var(--#{$prefix}blue-500);
-      background: var(--#{$prefix}blue-500);
+      color: $red-700;
     }
-
-    &[disabled] {
-      border: 1px solid rgba(243, 244, 246, 0.5);
-      background: rgba(243, 244, 246, 0.5);
+    &:focus {
+      color: $red-500;
     }
   }
-
-  &-secondary-stroke {
-    color: var(--#{$prefix}gray-700);
-    border: 1px solid var(--#{$prefix}gray-200);
-    background: var(--#{$prefix}white);
-
+  &.btn-green {
+    @include buttonBackground(
+    $green-500,
+    $green-600,
+    $green-700,
+    $green-500,
+    $white,
+    $green-200
+    );
+  }
+  &.btn-green-25 {
+    @include buttonBackground(
+    $green-100,
+    $green-200,
+    $green-300,
+    $green-100,
+    $green-600,
+    $green-200
+    );
     &:hover {
-      border: 1px solid var(--#{$prefix}blue-100);
-      background: var(--#{$prefix}blue-25);
+      color: $green-600;
     }
-
     &:active {
-      color: var(--#{$prefix}blue-500);
-      border: 1px solid var(--#{$prefix}blue-100);
-      background: var(--#{$prefix}blue-25);
+      color: $green-700;
     }
-
-    &[disabled] {
-      border: 1px solid var(--#{$prefix}gray-200);
+    &:focus {
+      color: $green-500;
     }
   }
-
-
-  &-tertiary-gray {
-    color: var(--#{$prefix}gray-700);
-    border: 1px solid var(--#{$prefix}white);
-    background: var(--#{$prefix}white);
-
+  &.btn-gray {
+    @include buttonBackground(
+    $gray-100,
+    $gray-200,
+    $gray-300,
+    $gray-100,
+    $gray-500,
+    $gray-50
+    );
     &:hover {
-      border: 1px solid var(--#{$prefix}gray-100);
-      background: var(--#{$prefix}gray-100);
+      color: $gray-600;
     }
-
     &:active {
-      color: var(--#{$prefix}blue-500);
-      border: 1px solid var(--#{$prefix}gray-100);
-      background: var(--#{$prefix}gray-100);
+      color: $gray-700;
+    }
+    &:focus {
+      color: $gray-500;
     }
   }
-
-  &-tertiary-colored {
-    color: var(--#{$prefix}blue-500);
-    border: 1px solid var(--#{$prefix}white);
-    background: var(--#{$prefix}white);
-
-    &:hover {
-      border: 1px solid var(--#{$prefix}blue-25);
-      background: var(--#{$prefix}blue-25);
-    }
-
-    &:active {
-      border: 1px solid var(--#{$prefix}blue-50);
-      background: var(--#{$prefix}blue-50);
-    }
-  }
-
-  &-link-colored {
-    color: var(--#{$prefix}blue-500);
-    border: 1px solid transparent;
-    background: transparent;
-
-    &:hover {
-      color: var(--#{$prefix}blue-600);
-    }
-
-    &:active {
-      color: var(--#{$prefix}blue-500);
-    }
-  }
-
-  &-link-gray {
-    color: var(--#{$prefix}gray-700);
-    border: 1px solid transparent;
-    background: transparent;
-
-    &:hover {
-      color: var(--#{$prefix}blue-500);
-    }
-
-    &:active {
-      color: var(--#{$prefix}blue-600);
-    }
-  }
-
-  &-primary-negative {
-    color: var(--#{$prefix}white);
-    border: 1px solid var(--#{$prefix}red-500);
-    background: var(--#{$prefix}red-500);
-
-    &:focus,
-    &:focus-visible {
-      box-shadow: 0 0 0 3px var(--#{$prefix}red-200);
-    }
-
-    &:hover {
-      border: 1px solid var(--#{$prefix}red-600);
-      background: var(--#{$prefix}red-600);
-    }
-
-    &:active {
-      border: 1px solid var(--#{$prefix}red-700);
-      background: var(--#{$prefix}red-700);
-    }
-
-    &[disabled] {
-      color: var(--#{$prefix}white);
-      border: 1px solid var(--#{$prefix}red-200);
-      background: var(--#{$prefix}red-200);
-    }
-  }
-
-  &-secondary-colored-negative {
-    color: var(--#{$prefix}red-500);
-    border: 1px solid var(--#{$prefix}red-50);
-    background: var(--#{$prefix}red-50);
-
-    &:focus,
-    &:focus-visible {
-      box-shadow: 0 0 0 3px var(--#{$prefix}red-200);
-    }
-
-    &:hover {
-      border: 1px solid var(--#{$prefix}red-100);
-      background: var(--#{$prefix}red-100);
-    }
-
-    &:active {
-      color: var(--#{$prefix}white);
-      border: 1px solid var(--#{$prefix}red-500);
-      background: var(--#{$prefix}red-500);
-    }
-
-    &[disabled] {
-      color: var(--#{$prefix}red-300);
-      border: 1px solid var(--#{$prefix}red-25);
-      background: var(--#{$prefix}red-25);
-    }
-  }
-
-  &-secondary-stroke-negative {
-    color: var(--#{$prefix}red-500);
-    border: 1px solid var(--#{$prefix}red-500);
-    background: var(--#{$prefix}white);
-
-    &:focus,
-    &:focus-visible {
-      box-shadow: 0 0 0 3px var(--#{$prefix}red-200);
-    }
-
-    &:hover {
-      background: var(--#{$prefix}red-25);
-    }
-
-    &:active {
-      background: var(--#{$prefix}red-50);
-    }
-
-    &[disabled] {
-      color: var(--#{$prefix}red-300);
-      border: 1px solid var(--#{$prefix}red-200);
-      background: var(--#{$prefix}white);
-    }
-  }
-
-  &-tertiary-gray-negative,
-  &-tertiary-colored-negative {
-    color: var(--#{$prefix}red-500);
-    border: 1px solid var(--#{$prefix}white);
-    background: var(--#{$prefix}white);
-
-    &:focus,
-    &:focus-visible {
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 0 0 3px var(--#{$prefix}red-200);
-    }
-
-    &:hover {
-      border: 1px solid var(--#{$prefix}red-25);
-      background: var(--#{$prefix}red-25);
-    }
-
-    &:active {
-      color: var(--#{$prefix}red-600);
-      border: 1px solid var(--#{$prefix}red-25);
-      background: var(--#{$prefix}red-25);
-    }
-
-    &[disabled] {
-      color: var(--#{$prefix}red-300);
-      border: 1px solid var(--#{$prefix}red-200);
-      background: var(--#{$prefix}white);
-    }
-  }
-
-  &-link-colored-negative,
-  &-link-gray-negative {
-    color: var(--#{$prefix}red-500);
-    border: 1px solid transparent;
-    background: transparent;
-
-    &:focus,
-    &:focus-visible {
-      box-shadow: 0 0 0 3px var(--#{$prefix}red-200);
-    }
-
-    &:hover {
-      color: var(--#{$prefix}red-600);
-    }
-
-    &[disabled] {
-      color: var(--#{$prefix}red-300);
-    }
-  }
-
-  //отдельные компоненты
-  &-system {
-    width: 1.5rem;
-    height: 1.5rem;
-    min-height: 1.5rem;
+  &.btn-icon {
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
     padding: 0;
-
-    & > img,
-    & > svg {
-      margin: 0;
+    border-radius: 8px;
+    .bi:before {
+      font-size: 20px;
     }
   }
-
-  &-delete {
-    width: 1.5rem;
-    height: 1.5rem;
-    min-height: 1.5rem;
-    padding: 0;
-
-    & > img,
-    & > svg {
-      margin: 0;
-
-      path {
-        fill: var(--#{$prefix}gray-400);
-      }
-    }
-
+  &.text-gray-500 {
     &:hover {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}red-500);
-        }
+      color: $gray-700 !important;
+    }
+  }
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+    color: $white;
+    border-color: $gray-200;
+    background-color: $gray-200;
+  }
+  .bi {
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 30px;
+
+    justify-content: center;
+    &:before {
+      font-size: 16px;
+    }
+    &.bi-plus {
+      &:before {
+        font-size: 32px;
       }
     }
-
-    &:active {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}red-600);
-        }
-      }
-    }
-
-    &-gray {
-      & > img,
-      & > svg {
-        margin: 0;
-
-        path {
-          fill: var(--#{$prefix}gray-300);
-        }
-      }
-
-      &:hover {
-        & > svg {
-          path {
-            fill: var(--#{$prefix}gray-400);
-          }
-        }
-      }
-
-      &:active {
-        & > svg {
-          path {
-            fill: var(--#{$prefix}gray-500);
-          }
-        }
+    &.bi-send {
+      &:before {
+        font-size: 22px;
       }
     }
   }
-
-  &-arrow {
-    width: 1.5rem;
-    height: 1.5rem;
-    min-height: 1.5rem;
-    padding: 0;
-
-    & > img,
-    & > svg {
-      margin: 0;
-
-      path {
-        fill: var(--#{$prefix}gray-500);
-      }
-    }
-
-    &:hover {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}blue-500);
-        }
-      }
-    }
-
-    &:active {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}blue-600);
-        }
-      }
-    }
-
-    &[disabled] {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}gray-300);
-        }
-      }
-    }
-
-    &-top {
-      transform: rotate(180deg);
-    }
-
-    &-right {
-      transform: rotate(270deg);
-    }
-
-    &-left {
-      transform: rotate(90deg);
-    }
+  span {
+    white-space: nowrap;
   }
+}
 
-  &-close {
-    width: 1.5rem;
-    height: 1.5rem;
-    min-height: 1.5rem;
-    padding: 0;
-
-    & > img,
-    & > svg {
-      margin: 0;
-
-      path {
-        fill: var(--#{$prefix}gray-400);
-      }
-    }
-
-    &:hover {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}gray-700);
-        }
-      }
-    }
-
-    &:active {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}blue-500);
-        }
-      }
-    }
-
-    &[disabled] {
-      & > svg {
-        path {
-          fill: var(--#{$prefix}gray-300);
-        }
-      }
-    }
-  }
-
-  &-eye {
-    width: 1.5rem;
-    height: 1.5rem;
-    min-height: 1.5rem;
-    padding: 0;
-
-    &:focus,
-    &:focus-visible {
-      box-shadow: none;
-    }
-
-    .icon-eye,
-    .icon-eye-closed {
-      transition: var(--#{$prefix}trans-dur) opacity ease-out;
-    }
-
-    .icon-eye-closed {
-      width: 0;
-      height: 0;
-      opacity: 0;
-    }
-
-    &-closed {
-      .icon-eye {
-        width: 0;
-        height: 0;
-        opacity: 0;
-      }
-
-      .icon-eye-closed {
-        width: auto;
-        height: auto;
-        opacity: 1;
-      }
-    }
-
-    & > img,
-    & > svg {
-      margin: 0;
-    }
-
-    &:hover {
-      & > img,
-      & > svg {
-        path {
-          fill: var(--#{$prefix}blue-500);
-        }
-      }
-    }
-  }
+.icon-24 {
+  font-size: 24px !important;
 }

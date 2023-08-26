@@ -1,0 +1,100 @@
+@mixin font($fontWeight, $fontSize, $lineHeight, $fontFamily: var(--font-family)) {
+  font: #{$fontWeight} #{$fontSize}/#{$lineHeight} #{$fontFamily};
+}
+
+@mixin buttonBackground($bgColor, $bgColorHover, $bgColorActive, $bgColorFocus, $color, $colorShadow) {
+  color: #{$color};
+  background-color: #{$bgColor};
+  &:hover {
+    color: #{$color};
+    background-color: #{$bgColorHover};
+  }
+  &:active {
+    color: #{$color};
+    background-color: #{$bgColorActive};
+  }
+  &:focus {
+    color: #{$color};
+    background-color: #{$bgColorFocus};
+    box-shadow: 0 0 0 4px #{$colorShadow};
+  }
+}
+
+@mixin sHeaderH1() {
+  @include font(700, 32px, 32px);
+
+  @media (min-width: 768px) {
+    @include font(700, 40px, 40px);
+  }
+
+  @media (min-width: 992px) {
+    @include font(700, 64px, 64px);
+
+    letter-spacing: -2px;
+  }
+}
+
+@mixin sHeaderH2() {
+  @include font(500, 48px, 48px);
+
+  letter-spacing: 0;
+}
+
+@mixin sHeaderH3() {
+  @include font(400, 24px, 24px);
+
+  letter-spacing: 0;
+
+  @media (min-width: 768px) {
+    @include font(400, 40px, 40px);
+  }
+}
+
+@mixin sSubHeader() {
+  @include font(700, 22px, 32px);
+
+  letter-spacing: 0;
+}
+
+@mixin sBigText() {
+  @include font(400, 17px, 24px);
+}
+
+@mixin sBigTextBold() {
+  @include font(700, 17px, 24px);
+}
+
+@mixin sMainText() {
+  @include font(400, 15px, 20px);
+}
+
+@mixin sMainTextBold() {
+  @include font(700, 15px, 20px);
+}
+
+@mixin sMainTextBoldCaps() {
+  @include font(700, 15px, 20px);
+
+  text-transform: uppercase;
+}
+
+@mixin sLabel() {
+  @include font(400, 12px, 16px);
+}
+
+@mixin sLabelLink() {
+  @include font(400, 12px, 16px);
+
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin sLabelSemi() {
+  @include font(600, 12px, 16px);
+}
+
+@mixin sLabelExtra() {
+  @include font(800, 12px, 16px);
+}

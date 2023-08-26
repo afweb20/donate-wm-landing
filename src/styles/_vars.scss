@@ -17,17 +17,17 @@ $gray-700: #384250;
 $gray-800: #1F2A37;
 $gray-900: #111927;
 
-$blue-25: #F0F8FF;
-$blue-50: #E6F2FB;
-$blue-100: #CCE6F7;
-$blue-200: #99CCEF;
-$blue-300: #66B3E8;
-$blue-400: #3399E0;
-$blue-500: #0080D8;
-$blue-600: #006CB4;
-$blue-700: #005895;
-$blue-800: #00497C;
-$blue-900: #003D67;
+$brand-25: #F0F8FF;
+$brand-50: #E6F2FB;
+$brand-100: #CCE6F7;
+$brand-200: #99CCEF;
+$brand-300: #66B3E8;
+$brand-400: #3399E0;
+$brand-500: #0080D8;
+$brand-600: #006CB4;
+$brand-700: #005895;
+$brand-800: #00497C;
+$brand-900: #003D67;
 
 $red-25: #FFF9F6;
 $red-50: #FEF3EC;
@@ -81,17 +81,17 @@ $wm-colors: (
   "gray-800": $gray-800,
   "gray-900": $gray-900,
 
-  "blue-25": $blue-25,
-  "blue-50": $blue-50,
-  "blue-100": $blue-100,
-  "blue-200": $blue-200,
-  "blue-300": $blue-300,
-  "blue-400": $blue-400,
-  "blue-500": $blue-500,
-  "blue-600": $blue-600,
-  "blue-700": $blue-700,
-  "blue-800": $blue-800,
-  "blue-900": $blue-900,
+  "brand-25": $brand-25,
+  "brand-50": $brand-50,
+  "brand-100": $brand-100,
+  "brand-200": $brand-200,
+  "brand-300": $brand-300,
+  "brand-400": $brand-400,
+  "brand-500": $brand-500,
+  "brand-600": $brand-600,
+  "brand-700": $brand-700,
+  "brand-800": $brand-800,
+  "brand-900": $brand-900,
 
   "red-25": $red-25,
   "red-50": $red-50,
@@ -131,6 +131,7 @@ $wm-colors: (
 );
 
 :root {
+  --font-family: "Manrope", sans-serif;
   @each $key, $value in $wm-colors {
     --#{$prefix}#{$key}: #{$value};
   }
