@@ -101,7 +101,7 @@ function addPage(page, lang, chunks=[]) {
     filename: page == "index" ? `./${lang}/${page}.html` : `./${lang}/${page}/index.html`,
     template: `./src/pages/${page}.hbs`,
     templateParameters: require(`./src/local/${lang}.json`),
-    chunks: ["webmoney-uz"].concat(chunks)
+    chunks: ["donate-wm-landing"].concat(chunks)
   });
 }
 

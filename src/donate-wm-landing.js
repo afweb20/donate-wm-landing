@@ -1,7 +1,8 @@
 import "./styles/style.scss";
 
 import {
-  LANG
+  LANG,
+  SUPPORTED_LANGS
 } from "./scripts/consts.js";
 
 const currentLang = LANG;
