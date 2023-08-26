@@ -1,0 +1,62 @@
+.levitating-icon {
+  position: absolute;
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    padding: 16px;
+    animation: float 10s ease-in-out infinite;
+    border-radius: 16px;
+    background-color: $white;
+
+    justify-content: center;
+  }
+  &--instagram {
+    top: 14%;
+    right: -8%;
+    transform: rotate(19deg);
+  }
+  &--telegram {
+    top: 24%;
+    left: -10%;
+    transform: rotate(-14deg);
+    .levitating-icon-wrapper {
+      width: 72px;
+      height: 72px;
+    }
+  }
+  &--tiktok {
+    top: 70%;
+    left: -2%;
+    transform: rotate(7deg);
+    .levitating-icon-wrapper {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  &--youtube {
+    top: 52%;
+    right: -5%;
+    transform: rotate(-4deg);
+    .levitating-icon-wrapper {
+      width: 72px;
+      height: 72px;
+    }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0);
+  }
+
+  50% {
+    transform: translatey(-50%);
+  }
+
+  100% {
+    transform: translatey(0);
+  }
+}
