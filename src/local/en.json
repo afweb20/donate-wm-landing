@@ -8,5 +8,9 @@
   "coverTitleCard": "карты",
   "coverTitleCrypto": "криптой",
   "or": "или",
-  "coverDescription": "Моментальный вывод на карты российских или иностранных банков"
+  "coverDescription": "Моментальный вывод на карты российских или иностранных банков",
+  "howItWorksTitle": "Как это работает",
+  "howToCreateLinkTitle": "Как создать ссылкку",
+  "howToPublishLinkTitle": "Как разместить ссылку",
+  "LinkCustomizationTitle": "Кастомизация"
 }

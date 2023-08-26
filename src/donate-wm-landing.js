@@ -16,7 +16,7 @@ function initTopMenu() {
     lang: currentLang,
     rid: "5E826DA3-CF2B-46E4-838D-AD48007C8859",
     wmid: "913109869675",
-    serviceName: "Service Name",
+    serviceName: "Donate",
     serviceRootUrl: `/${LANG}/`,
     onLoginBlockRendered: function(data) {
       if (data.wmid) {
