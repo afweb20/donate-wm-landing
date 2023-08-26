@@ -1,17 +1,43 @@
+.cover-phone {
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 220%;
+    height: 220%;
+    content: "";
+    transform: translate3d(-50%, -50%, 10px);
+    background: transparent url("../images/cover-phone-bg.svg") center center no-repeat;
+    background-size: contain;
+  }
+  .img-fluid {
+    position: relative;
+  }
+}
+
 .levitating-icon {
   position: absolute;
 
   &-wrapper {
+    z-index: 1;
     display: flex;
     align-items: center;
-    width: 80px;
-    height: 80px;
-    padding: 16px;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
     animation: float 10s ease-in-out infinite;
-    border-radius: 16px;
+    border-radius: 8px;
     background-color: $white;
 
     justify-content: center;
+
+    @media (min-width: 768px) {
+      width: 80px;
+      height: 80px;
+      padding: 16px;
+      border-radius: 24px;
+    }
   }
   &--instagram {
     top: 14%;
@@ -23,8 +49,12 @@
     left: -10%;
     transform: rotate(-14deg);
     .levitating-icon-wrapper {
-      width: 72px;
-      height: 72px;
+      width: 40px;
+      height: 40px;
+      @media (min-width: 768px) {
+        width: 96px;
+        height: 96px;
+      }
     }
   }
   &--tiktok {
@@ -32,8 +62,12 @@
     left: -2%;
     transform: rotate(7deg);
     .levitating-icon-wrapper {
-      width: 64px;
-      height: 64px;
+      width: 32px;
+      height: 32px;
+      @media (min-width: 768px) {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
   &--youtube {
@@ -41,8 +75,12 @@
     right: -5%;
     transform: rotate(-4deg);
     .levitating-icon-wrapper {
-      width: 72px;
-      height: 72px;
+      width: 40px;
+      height: 40px;
+      @media (min-width: 768px) {
+        width: 72px;
+        height: 72px;
+      }
     }
   }
 }
