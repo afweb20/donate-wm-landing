@@ -13,9 +13,12 @@
   &.btn-xl {
     @include sMainTextBold();
 
-    min-height: 40px;
+    min-width: 90px;
+    min-height: 48px;
     padding: 3px 12px;
+    border-radius: 8px;
 
+    justify-content: center;
     gap: 8px;
 
     @media (min-width: 992px) {
@@ -25,8 +28,6 @@
       min-height: 64px;
       padding: 7px 24px;
       border-radius: 16px;
-
-      justify-content: center;
     }
     span {
       white-space: nowrap;
