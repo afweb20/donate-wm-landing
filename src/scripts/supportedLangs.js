@@ -1,5 +1,5 @@
 function getSupportedLanguages() {
-  return ["ru", "en"];
+  return ["ru"];
 }
 
 module.exports = getSupportedLanguages();
