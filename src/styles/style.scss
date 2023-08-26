@@ -1,6 +1,12 @@
-// @import "fonts";
+@import "wmds-reset.scss";
+@import "fonts";
+
 
 body {
   font-family: "Manrope", sans-serif;
   color: red;
 }
+
+@import "components/\_buttons";
+
+@import "sections/\_cover";

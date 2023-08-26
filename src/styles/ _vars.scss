@@ -1,0 +1,68 @@
+$prefix: 'wmds-';
+
+:root {
+  --#{$prefix}trans-dur: 0.25s;
+
+  --#{$prefix}white: #ffffff;
+  --#{$prefix}black: #000000;
+
+  --#{$prefix}gray-25: #FCFCFD;
+  --#{$prefix}gray-50: #f9fafb;
+  --#{$prefix}gray-100: #f3f4f6;
+  --#{$prefix}gray-200: #e5e7eb;
+  --#{$prefix}gray-300: #d2d6db;
+  --#{$prefix}gray-400: #9da4ae;
+  --#{$prefix}gray-500: #6c737f;
+  --#{$prefix}gray-600: #4d5761;
+  --#{$prefix}gray-700: #384250;
+  --#{$prefix}gray-800: #1F2A37;
+  --#{$prefix}gray-900: #111927;
+
+  --#{$prefix}blue-25: #F0F8FF;
+  --#{$prefix}blue-50: #E6F2FB;
+  --#{$prefix}blue-100: #CCE6F7;
+  --#{$prefix}blue-200: #99CCEF;
+  --#{$prefix}blue-300: #66B3E8;
+  --#{$prefix}blue-400: #3399E0;
+  --#{$prefix}blue-500: #0080D8;
+  --#{$prefix}blue-600: #006CB4;
+  --#{$prefix}blue-700: #005895;
+  --#{$prefix}blue-800: #00497C;
+  --#{$prefix}blue-900: #003D67;
+
+  --#{$prefix}red-25: #FFF9F6;
+  --#{$prefix}red-50: #FEF3EC;
+  --#{$prefix}red-100: #FEE7DA;
+  --#{$prefix}red-200: #FEC8B6;
+  --#{$prefix}red-300: #FCA391;
+  --#{$prefix}red-400: #F98075;
+  --#{$prefix}red-500: #F54848;
+  --#{$prefix}red-600: #D23442;
+  --#{$prefix}red-700: #B0243C;
+  --#{$prefix}red-800: #8E1635;
+  --#{$prefix}red-900: #750D31;
+
+  --#{$prefix}yellow-25: #FFFDF4;
+  --#{$prefix}yellow-50: #FEFBE8;
+  --#{$prefix}yellow-100: #FEF7D2;
+  --#{$prefix}yellow-200: #FEEEA5;
+  --#{$prefix}yellow-300: #FCE178;
+  --#{$prefix}yellow-400: #FAD456;
+  --#{$prefix}yellow-500: #F8C020;
+  --#{$prefix}yellow-600: #D59E17;
+  --#{$prefix}yellow-700: #B27F10;
+  --#{$prefix}yellow-800: #8F620A;
+  --#{$prefix}yellow-900: #774D06;
+
+  --#{$prefix}green-25: #F8FEF8;
+  --#{$prefix}green-50: #F1FDF1;
+  --#{$prefix}green-100: #E4FBE4;
+  --#{$prefix}green-200: #CBF8CF;
+  --#{$prefix}green-300: #AAEAB7;
+  --#{$prefix}green-400: #8DD6A3;
+  --#{$prefix}green-500: #66BB88;
+  --#{$prefix}green-600: #4AA075;
+  --#{$prefix}green-700: #338665;
+  --#{$prefix}green-800: #206C55;
+  --#{$prefix}green-900: #13594B;
+}

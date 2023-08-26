@@ -9,7 +9,6 @@
     "publish": "webpack --mode=production && npm run postbuild",
     "postbuild": "node postbuild.js"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afweb20/donate-wm-landing.git"
@@ -21,9 +20,9 @@
   },
   "homepage": "https://github.com/afweb20/donate-wm-landing#readme",
   "devDependencies": {
-    "eslint": "^8.48.0",
     "ajv": "^7.2.4",
     "css-loader": "^6.7.2",
+    "eslint": "^8.48.0",
     "favicons": "^7.0.2",
     "favicons-webpack-plugin": "^6.0.0",
     "fs-extra": "^11.1.1",
@@ -33,6 +32,7 @@
     "js-cookie": "^3.0.5",
     "mini-css-extract-plugin": "^2.7.6",
     "moment": "^2.29.4",
+    "node-sass": "^9.0.0",
     "raw-loader": "^4.0.2",
     "replace-in-file": "^7.0.1",
     "sass": "^1.56.1",
