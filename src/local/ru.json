@@ -3,5 +3,10 @@
   "telepayLang": "nRu",
   "businesLang": "",
   "langDefault": "ru",
-  "titleIndex": "WebMoney Title"
+  "titleIndex": "WebMoney Донаты",
+  "coverTitle": "Принимай донаты с",
+  "coverTitleCard": "карты",
+  "coverTitleCrypto": "криптой",
+  "or": "или",
+  "coverDescription": "Моментальный вывод на карты российских или иностранных банков"
 }

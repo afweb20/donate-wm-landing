@@ -1,68 +1,149 @@
 $prefix: 'wmds-';
 
+$trans-dur: 0.25s;
+
+$white: #ffffff;
+$black: #000000;
+
+$gray-25: #FCFCFD;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d2d6db;
+$gray-400: #9da4ae;
+$gray-500: #6c737f;
+$gray-600: #4d5761;
+$gray-700: #384250;
+$gray-800: #1F2A37;
+$gray-900: #111927;
+
+$blue-25: #F0F8FF;
+$blue-50: #E6F2FB;
+$blue-100: #CCE6F7;
+$blue-200: #99CCEF;
+$blue-300: #66B3E8;
+$blue-400: #3399E0;
+$blue-500: #0080D8;
+$blue-600: #006CB4;
+$blue-700: #005895;
+$blue-800: #00497C;
+$blue-900: #003D67;
+
+$red-25: #FFF9F6;
+$red-50: #FEF3EC;
+$red-100: #FEE7DA;
+$red-200: #FEC8B6;
+$red-300: #FCA391;
+$red-400: #F98075;
+$red-500: #F54848;
+$red-600: #D23442;
+$red-700: #B0243C;
+$red-800: #8E1635;
+$red-900: #750D31;
+
+$yellow-25: #FFFDF4;
+$yellow-50: #FEFBE8;
+$yellow-100: #FEF7D2;
+$yellow-200: #FEEEA5;
+$yellow-300: #FCE178;
+$yellow-400: #FAD456;
+$yellow-500: #F8C020;
+$yellow-600: #D59E17;
+$yellow-700: #B27F10;
+$yellow-800: #8F620A;
+$yellow-900: #774D06;
+
+$green-25: #F8FEF8;
+$green-50: #F1FDF1;
+$green-100: #E4FBE4;
+$green-200: #CBF8CF;
+$green-300: #AAEAB7;
+$green-400: #8DD6A3;
+$green-500: #66BB88;
+$green-600: #4AA075;
+$green-700: #338665;
+$green-800: #206C55;
+$green-900: #13594B;
+
+$wm-colors: (
+  "white": $white,
+  "black": $black,
+
+  "gray-25": $gray-25,
+  "gray-50": $gray-50,
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900,
+
+  "blue-25": $blue-25,
+  "blue-50": $blue-50,
+  "blue-100": $blue-100,
+  "blue-200": $blue-200,
+  "blue-300": $blue-300,
+  "blue-400": $blue-400,
+  "blue-500": $blue-500,
+  "blue-600": $blue-600,
+  "blue-700": $blue-700,
+  "blue-800": $blue-800,
+  "blue-900": $blue-900,
+
+  "red-25": $red-25,
+  "red-50": $red-50,
+  "red-100": $red-100,
+  "red-200": $red-200,
+  "red-300": $red-300,
+  "red-400": $red-400,
+  "red-500": $red-500,
+  "red-600": $red-600,
+  "red-700": $red-700,
+  "red-800": $red-800,
+  "red-900": $red-900,
+
+  "yellow-25": $yellow-25,
+  "yellow-50": $yellow-50,
+  "yellow-100": $yellow-100,
+  "yellow-200": $yellow-200,
+  "yellow-300": $yellow-300,
+  "yellow-400": $yellow-400,
+  "yellow-500": $yellow-500,
+  "yellow-600": $yellow-600,
+  "yellow-700": $yellow-700,
+  "yellow-800": $yellow-800,
+  "yellow-900": $yellow-900,
+
+  "green-25": $green-25,
+  "green-50": $green-50,
+  "green-100": $green-100,
+  "green-200": $green-200,
+  "green-300": $green-300,
+  "green-400": $green-400,
+  "green-500": $green-500,
+  "green-600": $green-600,
+  "green-700": $green-700,
+  "green-800": $green-800,
+  "green-900": $green-900
+);
+
 :root {
-  --#{$prefix}trans-dur: 0.25s;
+  @each $key, $value in $wm-colors {
+    --#{$prefix}#{$key}: #{$value};
+  }
+}
 
-  --#{$prefix}white: #ffffff;
-  --#{$prefix}black: #000000;
-
-  --#{$prefix}gray-25: #FCFCFD;
-  --#{$prefix}gray-50: #f9fafb;
-  --#{$prefix}gray-100: #f3f4f6;
-  --#{$prefix}gray-200: #e5e7eb;
-  --#{$prefix}gray-300: #d2d6db;
-  --#{$prefix}gray-400: #9da4ae;
-  --#{$prefix}gray-500: #6c737f;
-  --#{$prefix}gray-600: #4d5761;
-  --#{$prefix}gray-700: #384250;
-  --#{$prefix}gray-800: #1F2A37;
-  --#{$prefix}gray-900: #111927;
-
-  --#{$prefix}blue-25: #F0F8FF;
-  --#{$prefix}blue-50: #E6F2FB;
-  --#{$prefix}blue-100: #CCE6F7;
-  --#{$prefix}blue-200: #99CCEF;
-  --#{$prefix}blue-300: #66B3E8;
-  --#{$prefix}blue-400: #3399E0;
-  --#{$prefix}blue-500: #0080D8;
-  --#{$prefix}blue-600: #006CB4;
-  --#{$prefix}blue-700: #005895;
-  --#{$prefix}blue-800: #00497C;
-  --#{$prefix}blue-900: #003D67;
-
-  --#{$prefix}red-25: #FFF9F6;
-  --#{$prefix}red-50: #FEF3EC;
-  --#{$prefix}red-100: #FEE7DA;
-  --#{$prefix}red-200: #FEC8B6;
-  --#{$prefix}red-300: #FCA391;
-  --#{$prefix}red-400: #F98075;
-  --#{$prefix}red-500: #F54848;
-  --#{$prefix}red-600: #D23442;
-  --#{$prefix}red-700: #B0243C;
-  --#{$prefix}red-800: #8E1635;
-  --#{$prefix}red-900: #750D31;
-
-  --#{$prefix}yellow-25: #FFFDF4;
-  --#{$prefix}yellow-50: #FEFBE8;
-  --#{$prefix}yellow-100: #FEF7D2;
-  --#{$prefix}yellow-200: #FEEEA5;
-  --#{$prefix}yellow-300: #FCE178;
-  --#{$prefix}yellow-400: #FAD456;
-  --#{$prefix}yellow-500: #F8C020;
-  --#{$prefix}yellow-600: #D59E17;
-  --#{$prefix}yellow-700: #B27F10;
-  --#{$prefix}yellow-800: #8F620A;
-  --#{$prefix}yellow-900: #774D06;
-
-  --#{$prefix}green-25: #F8FEF8;
-  --#{$prefix}green-50: #F1FDF1;
-  --#{$prefix}green-100: #E4FBE4;
-  --#{$prefix}green-200: #CBF8CF;
-  --#{$prefix}green-300: #AAEAB7;
-  --#{$prefix}green-400: #8DD6A3;
-  --#{$prefix}green-500: #66BB88;
-  --#{$prefix}green-600: #4AA075;
-  --#{$prefix}green-700: #338665;
-  --#{$prefix}green-800: #206C55;
-  --#{$prefix}green-900: #13594B;
+@each $key, $value in $wm-colors {
+  .bg-#{$key} {
+    background-color: #{$value} !important;
+  }
+  .text-#{$key} {
+    color: #{$value} !important;
+  }
+  .bdr-#{$key} {
+    border-color: #{$value} !important;
+  }
 }
