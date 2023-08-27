@@ -11,9 +11,9 @@ module.exports = (env, argv) => {
       "donate-wm-landing": {
         import: "./src/donate-wm-landing.js"
       },
-      "additional-script": {
-        import: "./src/scripts/additional-script.js"
-      }
+      // "additional-script": {
+      //   import: "./src/scripts/additional-script.js"
+      // }
     },
     output: {
       path: path.resolve(__dirname, "dist"),
@@ -51,6 +51,13 @@ module.exports = (env, argv) => {
           ]
         },
         {
+          test: /\.(mov|mp4)$/i,
+          type: "asset/resource",
+          generator: {
+            filename: "assets/video/[name][ext]",
+          },
+        },
+        {
           test: /\.(?:ico|gif|png|jpg|jpeg|svg|webp)$/i,
           type: "asset/resource",
           generator: {
@@ -81,7 +88,7 @@ module.exports = (env, argv) => {
             {
               loader: "handlebars-loader",
               options: {
-                inlineRequires: "/images/"
+                inlineRequires: /\/(images|video)\//
               }
             },
             {
@@ -124,6 +131,6 @@ function addPlugins(argv) {
     })
   ];
   pluginArray = pluginArray.concat(addMultiLangPage("index"));
-  pluginArray = pluginArray.concat(addMultiLangPage("additional-page", ["additional-script"]));
+  // pluginArray = pluginArray.concat(addMultiLangPage("additional-page", ["additional-script"]));
   return pluginArray;
 }
