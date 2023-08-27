@@ -14,8 +14,7 @@ function initTopMenu() {
     view: "adaptive",
     maxWidth: "1312px",
     lang: currentLang,
-    rid: "5E826DA3-CF2B-46E4-838D-AD48007C8859",
-    wmid: "913109869675",
+    rid: "9F63CDB6-A93C-46CB-8C47-A3AB00CF0828",
     serviceRootUrl: `/${LANG}/`,
     onLoginBlockRendered: function(data) {
       if (data.wmid) {
