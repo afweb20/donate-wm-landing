@@ -1,0 +1,18 @@
+.how-it-works {
+  @media (max-width: 991px) {
+    overflow: scroll;
+    overflow-y: hidden;
+
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &-col {
+    @media (max-width: 991px) {
+      width: 65%;
+    }
+  }
+}
